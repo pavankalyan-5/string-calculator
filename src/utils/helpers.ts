@@ -6,7 +6,7 @@ export function isEmptyString(input: string): boolean {
 }
 
 // function to split the input string and convert the numbers to integers
-export function splitAndConvertToInt(input: string, delimiter: string): number[] {
+export function splitAndConvertToInt(input: string, delimiter: RegExp): number[] {
     return input.split(delimiter).map(numStr => parseInt(numStr, 10));
 }
 

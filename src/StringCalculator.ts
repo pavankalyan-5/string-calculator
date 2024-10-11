@@ -7,8 +7,8 @@ export function StringCalculator(this: StringCalculator) {}
 
 StringCalculator.prototype.add = function(numbers: string): number {
 
-    // Considering the delimiter as comma for now.
-    let delimiter: string | RegExp = ',';
+    // 4. Support different delimiters such as , or \n
+    let delimiter: RegExp = /,|\n/;
     
     // 1. If the input is empty, return 0
     if(isEmptyString(numbers)) {
