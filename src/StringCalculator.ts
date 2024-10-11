@@ -12,6 +12,12 @@ StringCalculator.prototype.add = function(numbers: string): number {
         return 0;
     }
 
+    // 2. If the input containing only one number, return the number itself.
+    // considering the delimiter as comma for now.
+    if(numbers.split(',').length === 1) {
+        return parseInt(numbers);
+    }
+
     // TODO: returning 0 for now. Will implement the logic later.
     return 0;
 };
