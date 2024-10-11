@@ -13,5 +13,9 @@ describe('StringCalculator', () => {
         expect(calculator.add("")).toBe(0);
     });
 
+    test('should return 0 for an spaced string', () => {
+        expect(calculator.add("   ")).toBe(0);
+    });
+
 });
 
