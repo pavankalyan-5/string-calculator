@@ -9,11 +9,20 @@ StringCalculator.prototype.add = function(numbers: string): number {
 
     // 4. Support different delimiters such as , or \n
     let delimiter: RegExp = /,|\n/;
+
+    //  5. Support different delimiters 
+    if (numbers.startsWith("//")) {
+        const parts = numbers.split("\n");
+        delimiter = new RegExp(parts[0].substring(2));
+        numbers = parts[1];
+    }
     
     // 1. If the input is empty, return 0
     if(isEmptyString(numbers)) {
         return 0;
     }
+
+
 
     // 2. If the input containing only one number, return the number itself.
     const numbersList = splitAndConvertToInt(numbers, delimiter);
