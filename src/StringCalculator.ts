@@ -22,10 +22,16 @@ StringCalculator.prototype.add = function(numbers: string): number {
         return 0;
     }
 
-
-
     // 2. If the input containing only one number, return the number itself.
     const numbersList = splitAndConvertToInt(numbers, delimiter);
+    
+
+    // 6. to handle negative numbers
+    const negatives: number[] = numbersList.filter(n => n < 0);
+    if (negatives.length > 0) {
+        throw new Error(`negative numbers not allowed ${negatives.join(",")}`);
+    }
+
     if(numbersList.length === 1) {
         return numbersList[0];
     }
